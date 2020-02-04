@@ -119,3 +119,5 @@ AUROC_val
 
 ## Commented out as its already aone
 #lrModel.write().overwrite().save("s3a://prod-cdptrialuser19-trycdp-com/cdp-lake/data/airlines/models/lr-model")
+
+spark.stop()
