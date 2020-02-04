@@ -68,6 +68,8 @@ assembler = VectorAssembler(
     inputCols = input_cols,
     outputCol = 'features')
 
+
+
 if len (sys.argv) == 4:
   try:
     maxIter = int(sys.argv[1])
@@ -80,6 +82,8 @@ else:
   elasticNetParam = 0.0
   regParam = 0.01
 
+## Main entry for Experiments
+# For experiments, use the arguments "15 0.0 0.01" to the Method "LogisticRegression"
 
 lr = LogisticRegression(
   featuresCol = 'features', 
@@ -117,5 +121,5 @@ AUROC_val
 #cdsw.track_metric("AUROC", round(AUROC_val,3))
 
 
-## Commented out as its already aone
+## Commented out as its already done
 #lrModel.write().overwrite().save("s3a://prod-cdptrialuser19-trycdp-com/cdp-lake/data/airlines/models/lr-model")
